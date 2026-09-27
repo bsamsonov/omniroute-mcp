@@ -1,0 +1,38 @@
+[project]
+name = "omniroute-mcp"
+version = "1.0.0"
+description = "Teaching MCP server and autonomous agent in Python, giving any local AI agent access to the OmniRoute LLM gateway"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+]
+
+[project.scripts]
+# --- server: two versions of the same code, differing only in transport ---
+omniroute-mcp = "omniroute_mcp.server:main"            # local: stdio
+omniroute-mcp-http = "omniroute_mcp.server:main_http"  # network: streamable-http
+
+# --- client: an agent on top of the server, same transport choice ---
+omniroute-agent = "omniroute_agent.stdio:main"         # spawns the server itself
+omniroute-agent-http = "omniroute_agent.http:main"     # connects over the network
+omniroute-discover = "omniroute_agent.discovery:main"  # MCP client without an LLM
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/omniroute_mcp", "src/omniroute_agent"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
