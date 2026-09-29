@@ -2,7 +2,7 @@
 
 A teaching MCP server and autonomous agent in Python, using the [OmniRoute](https://github.com/diegosouzapw/OmniRoute) LLM gateway as a real backend.
 
-[![tests](https://github.com/borissamsonov77/omniroute-mcp/actions/workflows/tests.yml/badge.svg)](https://github.com/borissamsonov77/omniroute-mcp/actions/workflows/tests.yml)
+[![tests](https://github.com/bsamsonov/omniroute-mcp/actions/workflows/tests.yml/badge.svg)](https://github.com/bsamsonov/omniroute-mcp/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Why this project
@@ -44,7 +44,7 @@ Prerequisites: Python 3.10+, [uv](https://docs.astral.sh/uv/), and a running
 OmniRoute instance (default `http://localhost:20128`).
 
 ```bash
-git clone https://github.com/borissamsonov77/omniroute-mcp.git
+git clone https://github.com/bsamsonov/omniroute-mcp.git
 cd omniroute-mcp
 uv sync --extra dev
 uv run pytest -q   # 35 tests, no gateway needed
