@@ -164,7 +164,7 @@ assert "1d 1h" in text         # 91600 s ~= 1 day 1 hour
 assert "cline" in text          # the degraded provider is named
 assert "chipotle" not in text   # healthy — no need to mention it
 assert "arrayBuffers" not in text
-assert "80e3e260" not in text
+assert "opencode:00000000" not in text
 ```
 
 `tests/test_formatting.py`

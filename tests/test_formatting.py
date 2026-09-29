@@ -25,7 +25,7 @@ def test_health_keeps_signal_drops_noise() -> None:
             },
             # Noise that must be dropped:
             "memoryUsage": {"arrayBuffers": 14207100, "rss": 360386560},
-            "rateLimitStatus": {"opencode:80e3e260-a95d-4423": {"queued": 0}},
+            "rateLimitStatus": {"opencode:00000000-0000-4000": {"queued": 0}},
         }
     )
     assert "3.8.42" in text
@@ -33,7 +33,7 @@ def test_health_keeps_signal_drops_noise() -> None:
     assert "cline" in text  # the degraded provider is named
     assert "chipotle" not in text  # healthy — no need to mention it
     assert "arrayBuffers" not in text
-    assert "80e3e260" not in text
+    assert "opencode:00000000" not in text
 
 
 def test_models_puts_auto_first() -> None:

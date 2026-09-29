@@ -35,7 +35,7 @@ Here's what's in there besides the useful part:
   "memoryUsage": {"rss": 360386560, "heapTotal": 301993984,
                   "heapUsed": 294508808, "arrayBuffers": 14207100},
   "rateLimitStatus": {
-    "opencode:80e3e260-a95d-4423-89bc-aac7eeea4688": {"queued": 0, "running": 0},
+    "opencode:00000000-0000-4000-8000-000000000000": {"queued": 0, "running": 0},
     "openai-compatible-chat-c2ed2087-8d90-4dac-be37-2e6dbebc9fdd:dcc0a2b4-…": {…}
   },
   "learnedLimits": {...}, "lockouts": {...}, "dedup": {...}, "cryptography": {...}
